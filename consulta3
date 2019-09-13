@@ -1,0 +1,12 @@
+var params = {
+  TableName: 'Envio',
+  IndexName: 'EnviosPendientesIndex',
+  Limit: '20',
+  Select:  'ALL_PROJECTED_ATTRIBUTES',
+  ReturnConsumedCapacity: 'TOTAL'
+};
+
+dynamodb.scan(params, function(err, data) {
+    if (err) ppJson(err); // an error occurred
+    else ppJson(data); // successful response
+});

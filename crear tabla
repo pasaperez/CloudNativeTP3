@@ -1,0 +1,33 @@
+var params = {
+    TableName: 'Envio',
+    KeySchema: [
+        {
+            AttributeName: 'id',
+            KeyType: 'HASH',
+        },
+        {
+            AttributeName: 'fechaAlta',
+            KeyType: 'RANGE',
+        }
+    ],
+    AttributeDefinitions: [
+        {
+            AttributeName: 'id',
+            AttributeType: 'S',
+        },
+        {
+            AttributeName: 'fechaAlta',
+            AttributeType: 'S',
+        },
+
+    ],
+    ProvisionedThroughput: {
+        ReadCapacityUnits: 1,
+        WriteCapacityUnits: 1,
+    },
+};
+dynamodb.createTable(params, function(err, data) {
+    if (err) ppJson(err); // an error occurred
+    else ppJson(data); // successful response
+
+});

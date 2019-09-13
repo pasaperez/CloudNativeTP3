@@ -1,0 +1,42 @@
+var params = {
+    TableName: 'Envio',
+    KeyConditionExpression: 'id = :value',
+    ExpressionAttributeValues: {
+        ':value' : '1'
+    },
+    ReturnConsumedCapacity: 'TOTAL', // optional (NONE | TOTAL | INDEXES)
+};
+docClient.query(params, function(err, data) {
+    if (err) ppJson(err); // an error occurred
+    else ppJson(data); // successful response
+});
+
+var params = {
+    TableName: 'Envio',
+    KeyConditionExpression: 'id = :value',
+    ExpressionAttributeValues: {
+        ':value' : '5'
+    },
+    ReturnConsumedCapacity: 'TOTAL', // optional (NONE | TOTAL | INDEXES)
+};
+docClient.query(params, function(err, data) {
+    if (err) ppJson(err); // an error occurred
+    else ppJson(data); // successful response
+});
+
+
+
+//////////////////////////////////////
+var params = {
+    TableName: 'Envio',
+    Key: {
+        id: '1',
+        fechaAlta: '19-05-28'
+    },
+    ReturnConsumedCapacity: 'TOTAL', // optional (NONE | TOTAL | INDEXES)
+};
+console.log("Calling GetItem");
+docClient.get(params, function(err, data) {
+    if (err) ppJson(err); // an error occurred
+    else ppJson(data); // successful response
+});

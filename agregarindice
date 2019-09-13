@@ -1,0 +1,62 @@
+var params = {
+  TableName: 'Envio',
+  AttributeDefinitions: [
+        {
+            AttributeName: 'id',
+            AttributeType: 'S',
+        },
+        {
+            AttributeName: 'fechaAlta',
+            AttributeType: 'S',
+        },
+        {
+            AttributeName: 'pendiente',
+            AttributeType: 'S',
+        }
+    ],
+  GlobalSecondaryIndexUpdates: [
+    {
+      Create: {
+        IndexName: 'EnviosPendientesIndex',
+        KeySchema: [
+          {
+            AttributeName: 'id',
+            KeyType: 'HASH'
+          },
+          {
+            AttributeName: 'pendiente',
+            KeyType: 'RANGE'
+          }
+        ],
+        Projection: {
+          ProjectionType: 'KEYS_ONLY'
+        },
+        ProvisionedThroughput: {
+          ReadCapacityUnits: '1',
+          WriteCapacityUnits: '1'
+        }
+      }
+    }
+  ],
+  ProvisionedThroughput: {
+    ReadCapacityUnits: '2',
+    WriteCapacityUnits: '2'
+  }
+};
+dynamodb.updateTable(params, function(err, data) {
+  if (err) console.log(err, err.stack); // an error occurred
+  else     console.log(data);           // successful response
+});
+
+
+/*
+
+var params = {
+    TableName: 'Envio',
+};
+dynamodb.describeTable(params, function(err, data) {
+    if (err) ppJson(err); // an error occurred
+    else ppJson(data); // successful response
+});
+
+*/

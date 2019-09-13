@@ -1,0 +1,92 @@
+var params = {
+    TableName: 'Envio',
+    Item:
+    {
+        id: '1',
+        fechaAlta: '19-05-28',
+        destino:'Mendoza',
+        email:'pasaperez@yahoo.com.ar',
+        pendiente: '1'
+    }
+};
+docClient.put(params, function(err, data) {
+    if (err) ppJson(err); // an error occurred
+    else ppJson(data); // successful response
+});
+
+var params = {
+    TableName: 'Envio',
+    Item:
+    {
+        id: '2',
+        fechaAlta: '19-01-01',
+        destino:'Mendoza',
+        email:'josu@yahoo.com.ar'
+    }
+};
+docClient.put(params, function(err, data) {
+    if (err) ppJson(err); // an error occurred
+    else ppJson(data); // successful response
+});
+
+var params = {
+    TableName: 'Envio',
+    Item:
+    {
+        id: '3',
+        fechaAlta: '19-07-16',
+        destino:'Mendoza',
+        email:'cata@yahoo.com.ar',
+        pendiente: '1'
+    }
+};
+docClient.put(params, function(err, data) {
+    if (err) ppJson(err); // an error occurred
+    else ppJson(data); // successful response
+});
+
+var params = {
+    TableName: 'Envio',
+    Item:
+    {
+        id: '4',
+        fechaAlta: '19-06-15',
+        destino:'Mendoza',
+        email:'gabi@yahoo.com.ar'
+    }
+};
+docClient.put(params, function(err, data) {
+    if (err) ppJson(err); // an error occurred
+    else ppJson(data); // successful response
+});
+
+var params = {
+    TableName: 'Envio',
+    Item:
+        {
+            id: '6',
+            fechaAlta: '19-02-03',
+            destino:'Mendoza',
+            email:'incog@yahoo.com.ar',
+            pendiente: '1'
+        }
+};
+docClient.put(params, function(err, data) {
+    if (err) ppJson(err); // an error occurred
+    else ppJson(data); // successful response
+});
+
+var params = {
+    TableName: 'Envio',
+    Item:
+        {
+            id: '7',
+            fechaAlta: '19-05-27',
+            destino:'Mendoza',
+            email:'pasaperez@yahoo.com.ar'
+        }
+};
+docClient.put(params, function(err, data) {
+    if (err) ppJson(err); // an error occurred
+    else ppJson(data); // successful response
+});
